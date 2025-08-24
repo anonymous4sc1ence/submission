@@ -1,0 +1,40 @@
+Attack Vector,Code
+Firmware reflashing,P-A1
+Sensor-bias (magnet/IR),P-A2
+Power-rail surges,P-A3
+Field-level tampering,P-A4
+Acoustic / EM side-channel,P-A5
+Active optical LiDAR spoof,SP-A1
+Camera/Depth blinding,SP-A2
+Ultrasound / EMI IMU drift,SP-A3
+Physical adversarial patches,SP-A4
+Sensor-driven privacy leak,SP-A5
+Timing-channel jitter,DP-A1
+Memory-safety overflow,DP-A2
+Race / TOCTOU on buffers,DP-A3
+Estimator-bias tampering,DP-A4
+Topic spoof / GUID hijack,MW-A1
+Replay / stale frame,MW-A2
+Plain-text sniff / exfil,MW-A3
+Discovery abuse / DoS,MW-A4
+Adv. examples (vision/RL),DM-A1
+Sequential perturbations,DM-A2
+Slow fuse / concept drift,DM-A3
+Reward hacking / spec gaming,DM-A4
+Model poisoning / FL backdoor,DM-A5
+Physical backdoor trigger,DM-A6
+FSM logic bombs,DM-A7
+Param-gain tampering,DM-A8
+Planner cost manipulation,DM-A9
+Malicious OTA update,DM-A10
+Trojaned pretrained model,DM-A11
+Script / FSM corruption,AP-A1
+Unauth. APIs,AP-A2
+Unsigned OTA / CI chain,AP-A3
+Twin overload / sim gap,AP-A4
+Runtime param tamper,AP-A5
+Ultrasound/laser cmd,SI-A1
+Hidden / synthetic audio,SI-A2
+Visual spoof / adv. patch,SI-A3
+Privacy leak takeover,SI-A4
+Social eng. trust abuse,SI-A5

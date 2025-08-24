@@ -1,0 +1,40 @@
+Attack Vector
+Firmware reflashing
+Sensor-bias (magnet/IR)
+Power-rail surges
+Field-level tampering
+Acoustic / EM side-channel
+Active optical LiDAR spoof
+Camera/Depth blinding
+Ultrasound / EMI IMU drift
+Physical adversarial patches
+Sensor-driven privacy leak
+Timing-channel jitter
+Memory-safety overflow
+Race / TOCTOU on buffers
+Estimator-bias tampering
+Topic spoof / GUID hijack
+Replay / stale frame
+Plain-text sniff / exfil
+Discovery abuse / DoS
+Adv. examples (vision/RL)
+Sequential perturbations
+Slow fuse / concept drift
+Reward hacking / spec gaming
+Model poisoning / FL backdoor
+Physical backdoor trigger
+FSM logic bombs
+Param-gain tampering
+Planner cost manipulation
+Malicious OTA update
+Trojaned pretrained model
+Script / FSM corruption
+Unauth. APIs
+Unsigned OTA / CI chain
+Twin overload / sim gap
+Runtime param tamper
+Ultrasound/laser cmd
+Hidden / synthetic audio
+Visual spoof / adv. patch
+Privacy leak takeover
+Social eng. trust abuse
