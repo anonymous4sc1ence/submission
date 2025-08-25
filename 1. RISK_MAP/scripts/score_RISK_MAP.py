@@ -20,12 +20,12 @@ warnings.filterwarnings("ignore", category=UserWarning, module="matplotlib")
 warnings.filterwarnings("ignore", category=DeprecationWarning, module="matplotlib")
 # ───────────────────────── Constants ─────────────────────────
 LAYER_MAP = {
-    'P':  'Physical', 'SP': 'Sensor and Perception', 'DP': 'Data Processing',
+    'P':  'Physical', 'SP': 'Sensing and Perception', 'DP': 'Data Processing',
     'MW': 'Middleware', 'DM': 'Decision-Making',
-    'AP': 'Application', 'SI': 'Social_Interface'
+    'AP': 'Application', 'SI': 'Social Interface'
 }
-LAYER_ORDER = ['Physical','Sensor and Perception','Data Processing','Middleware',
-               'Decision-Making','Application','Social_Interface']
+LAYER_ORDER = ['Physical','Sensing and Perception','Data Processing','Middleware',
+               'Decision-Making','Application','Social Interface']
 
 # ───────────────────────── Paths ─────────────────────────
 def project_root(): return pathlib.Path(__file__).resolve().parents[1]
@@ -93,7 +93,7 @@ def radar_plot(layer_scores, overall_pct, out_pdf):
     ax.set_title(f"RISK-MAP Layer Coverage (0–5)\nOverall: {overall_pct:.1f}%", pad=20)
 
     for ang, r in zip(angles[:-1], radii[:-1]):
-        ax.text(ang, r + 0.15, f"{r:.1f}", ha="center", va="bottom", fontsize=8)
+        ax.text(ang, r + 0.15, f"{r:.1f}", ha="center", va="bottom", fontsize=18)
 
     fig.tight_layout()
     fig.savefig(out_pdf)
@@ -113,7 +113,8 @@ def combined_radar_plot(all_scores, out_pdf):
     ax.grid(True, which="major", color="grey", alpha=.6)
     ax.grid(True, which="minor", color="grey", linestyle=":", alpha=.3)
     ax.set_xticks(angles[:-1])
-    ax.set_xticklabels(labels)
+    ax.set_xticklabels(labels, fontsize=16)
+    ax.set_yticklabels(np.arange(0, 6, 1), fontsize=14)
 
     for i, (robot, lyr_dict) in enumerate(all_scores.items()):
         radii = [v*10 for v in lyr_dict.values()]
@@ -123,10 +124,11 @@ def combined_radar_plot(all_scores, out_pdf):
         ax.fill(angles, radii, alpha=0.15, color=c)
 
         for ang, r in zip(angles[:-1], radii[:-1]):
-            ax.text(ang, r + 0.15, f"{r:.1f}", ha="center", va="bottom", fontsize=7, color=c)
+            ax.text(ang, r + 0.15, f"{r:.1f}", ha="center", va="bottom", fontsize=12, color=c)
 
-    ax.set_title("RISK-MAP Layer Coverage – combined view (0–5)", pad=20)
-    ax.legend(loc="upper right", bbox_to_anchor=(1.25, 1.1), frameon=False)
+    ax.set_title("RISK-MAP Layer Coverage", pad=20, fontsize=18, fontweight='bold', loc='center')
+    ax.legend(loc="lower left", bbox_to_anchor=(1.05, -0.1), frameon=False, fontsize=13)
+    fig.subplots_adjust(top=0.85) # leaves more space for title
     fig.tight_layout()
     fig.savefig(out_pdf)
     fig.savefig(out_pdf.with_suffix(".png"), dpi=300)
@@ -139,8 +141,8 @@ def heatmap_top10(E, W, out_png):
     if data.empty: return
     plt.figure(figsize=(10, 4))
     plt.imshow(data, aspect='auto', vmin=0, vmax=1)
-    plt.yticks(range(len(idx)), idx, fontsize=7)
-    plt.xticks(range(len(data.columns)), data.columns, rotation=90, fontsize=6)
+    plt.yticks(range(len(idx)), idx, fontsize=15)
+    plt.xticks(range(len(data.columns)), data.columns, rotation=90, fontsize=15)
     plt.colorbar(label='Coverage')
     plt.tight_layout()
     plt.savefig(out_png)
@@ -173,20 +175,20 @@ def combined_heatmap(A, W, impl_files, out_pdf):
     im = ax.imshow(display, vmin=0, vmax=vmax, cmap=cmap, aspect="auto")
 
     ax.set_xticks(range(len(display.columns)))
-    ax.set_xticklabels(display.columns, fontsize=9)
+    ax.set_xticklabels(display.columns, fontsize=15)
     ax.set_yticks(range(len(display.index)))
-    ax.set_yticklabels(display.index, fontsize=8)
+    ax.set_yticklabels(display.index, fontsize=15)
 
     for i in range(display.shape[0]):
         for j in range(display.shape[1]):
             val = pivot.iat[i, j]
             if pd.notna(val):
                 txt_colour = "white" if val > vmax * 0.6 else "black"
-                ax.text(j, i, f"{val:.2f}", ha="center", va="center", fontsize=7, color=txt_colour)
+                ax.text(j, i, f"{val:.2f}", ha="center", va="center", fontsize=15, color=txt_colour)
 
     cbar = fig.colorbar(im, ax=ax, shrink=0.7)
     cbar.set_label("Residual risk (higher = worse)", rotation=270, labelpad=15)
-    ax.set_title("Top-10 Residual Risks Across Robots", pad=12, fontsize=13, weight="bold")
+    ax.set_title("Top-10 Residual Risks Across Robots", pad=12, fontsize=15, weight="bold")
 
     fig.tight_layout()
     fig.savefig(out_pdf, dpi=300)
@@ -240,7 +242,7 @@ def main():
     combined_radar_plot(all_layer_scores, FIG_DIR / "RISK_MAP_combined_radar.pdf")
     print(f"[✓] Combined radar saved")
 
-    combined_heatmap(A_full, W_full, IMPL_FILES, FIG_DIR / "combined_heatmap_safe_r.pdf")
+    combined_heatmap(A_full, W_full, IMPL_FILES, FIG_DIR / "combined_heatmap_RISK_MAP.pdf")
 
 if __name__ == "__main__":
     main()
