@@ -184,8 +184,7 @@ These correspond to the quantitative RISK-MAP method and results reported in the
 
 1) **Create an environment** (pick one):
 - **venv**
-```
-  ```bash
+```bash
   python -m venv .venv
   # Windows:
   .venv\Scripts\activate
@@ -204,10 +203,10 @@ The notebook will:
  - Load the core matrices from data/attacks_vs_defenses_normalised.csv and data/attack_weights.csv.
  - Load robot implementation CSVs in data/ (e.g., *_implementation_status.csv).
  - Compute:
-    -- Overall RISK-MAP score per robot
-    -- 7-layer coverage (radar)
-    -- Top-10 residual risks (heatmap)
-    -- Write figures into figures/ (per-robot subfolders) and any combined plots (e.g., figures/RISK_MAP_combined_radar.pdf, figures/combined_heatmap_safe_r.png).
+    - Overall RISK-MAP score per robot
+    - 7-layer coverage (radar)
+    - Top-10 residual risks (heatmap)
+    - Write figures into figures/ (per-robot subfolders) and any combined plots (e.g., figures/RISK_MAP_combined_radar.pdf, figures/combined_heatmap_safe_r.png).
 
 Note (Windows paths): If you run from OneDrive or paths containing spaces, the notebook/plots still work as long as you keep relative paths (as they are in the repo).
 ```
