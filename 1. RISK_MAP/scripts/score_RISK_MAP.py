@@ -3,19 +3,21 @@
 score_RISK_MAP.py – Compute RISK_MAP overall & per-layer scores automatically.
 
 This version:
-✔ Auto-loads all required inputs from /data
-✔ Reads platform-specific applicable attack vectors
-✔ Generates radar + heatmaps in /figures/<robot>
-✔ Outputs per-layer scores CSV in /data
-✔ Adds combined radar chart
-✔ Adds combined annotated heatmap (top-10 residual risks)
+- Auto-loads all required inputs from /data
+- Reads platform-specific applicable attack vectors
+- Generates radar + heatmaps in /figures/<robot>
+- Outputs per-layer scores CSV in /data
+- Adds combined radar chart
+- Adds combined annotated heatmap (top-10 residual risks)
 """
 
 import pathlib, re
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning, module="matplotlib")
+warnings.filterwarnings("ignore", category=DeprecationWarning, module="matplotlib")
 # ───────────────────────── Constants ─────────────────────────
 LAYER_MAP = {
     'P':  'Physical', 'SP': 'Sensor and Perception', 'DP': 'Data Processing',
@@ -62,6 +64,11 @@ def residual_risk(A, W, I):
     E = A[common].mul(I[common], axis=1)
     C = 1 - (1 - E).prod(axis=1)
     return W * (1 - C)
+
+
+
+
+
 
 # ───────────────────────── Plots ─────────────────────────
 def radar_plot(layer_scores, overall_pct, out_pdf):
@@ -158,7 +165,7 @@ def combined_heatmap(A, W, impl_files, out_pdf):
     pivot = heat.pivot_table(index="Attack", columns="Robot", values="Residual", aggfunc="first")
     display = pivot.fillna(-1)
 
-    cmap = cm.get_cmap("viridis").copy()
+    cmap = plt.colormaps["viridis"].copy()
     cmap.set_under("#e0e0e0")
     vmax = pivot.max().max()
 
@@ -224,14 +231,14 @@ def main():
         rdir.mkdir(parents=True, exist_ok=True)
         radar_plot(layer_scores, pct, rdir / "radar.pdf")
         heatmap_top10(E, W, rdir / "heatmap.png")
-        print(f"[✓] {robot:>8}: RISK_MAP {pct:5.1f}%  → {rdir}")
+        print(f"[✓] {robot:>8}: RISK_MAP {pct:5.1f}%  → {rdir.relative_to(ROOT)}")
 
     df = pd.DataFrame(summary_rows).set_index("Robot")
     df.to_csv(DATA_DIR / "RISK_MAP_Per-Layer_Scores.csv")
-    print(f"[✓] Saved per-layer scores CSV → {DATA_DIR / 'RISK_MAP_Per-Layer_Scores.csv'}")
+    print(f"[✓] Saved per-layer scores CSV")
 
     combined_radar_plot(all_layer_scores, FIG_DIR / "RISK_MAP_combined_radar.pdf")
-    print(f"[✓] Combined radar saved → {FIG_DIR / 'RISK_MAP_combined_radar.pdf'}")
+    print(f"[✓] Combined radar saved")
 
     combined_heatmap(A_full, W_full, IMPL_FILES, FIG_DIR / "combined_heatmap_safe_r.pdf")
 
@@ -245,11 +252,11 @@ if __name__ == "__main__":
 # score_RISK_MAP.py – Compute RISK_MAP overall & per-layer scores automatically.
 
 # This version:
-# ✔ Auto-loads all required inputs from /data
-# ✔ Generates radar + heatmaps in /figures/<robot>
-# ✔ Outputs per-layer scores CSV in /data
-# ✔ Adds combined radar chart
-# ✔ Adds combined annotated heatmap (top-10 residual risks)
+# - Auto-loads all required inputs from /data
+# - Generates radar + heatmaps in /figures/<robot>
+# - Outputs per-layer scores CSV in /data
+# - Adds combined radar chart
+# - Adds combined annotated heatmap (top-10 residual risks)
 # """
 
 # import pathlib, re

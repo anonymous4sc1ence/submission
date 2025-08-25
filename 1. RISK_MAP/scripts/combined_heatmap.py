@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
 score_RISK_MAP.py – Compute RISK_MAP scores:
-✔ Radar + heatmap plots
-✔ Combined radar plot
-✔ Per-layer scores CSV
-✔ Zero argument script
+- Radar + heatmap plots
+- Combined radar plot
+- Per-layer scores CSV
+- Zero argument script
 """
 
 import pathlib
@@ -159,7 +159,7 @@ def main():
         radar_plot(layer_scores, pct, rdir / "radar.pdf")
         heatmap_top10(E, W, rdir / "heatmap.png")
 
-        print(f"[✓] {robot:>8}: RISK_MAP {pct:5.1f}%  → {rdir}")
+        print(f"[✓] {robot:>8}: RISK_MAP {pct:5.1f}%  → {rdir.relative_to(ROOT)}")
 
     # Save per-layer scores CSV
     df = pd.DataFrame(summary_rows).set_index("Robot")
