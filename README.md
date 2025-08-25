@@ -38,9 +38,9 @@ The RISK-MAP framework provides:
 
 ### Key Features
 
-- 🛡️ **Comprehensive Coverage**: 50+ attack vectors across Physical, Sensor & Perception, Data Processing, Middleware, Decision-Making, Application, and Social Interface layers
+- 🛡️ **Comprehensive Coverage**: 39 attack vectors and 35 defense measures across Physical, Sensor & Perception, Data Processing, Middleware, Decision-Making, Application, and Social Interface layers
 - 📊 **Quantitative Metrics**: Weighted risk scores with statistical validation
-- 🎯 **Practical Applicability**: Tested on 10+ commercial robotic platforms
+- 🎯 **Practical Applicability**: Tested on 3 commercial robotic platforms
 - 🔧 **Automated Assessment**: Scriptable evaluation pipeline for CI/CD integration
 
 ## 📁 Repository Structure
