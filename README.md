@@ -149,5 +149,78 @@ Expected Output
 📖 Detailed Usage
 Assessing a New Robot
 
-Create Implementation Status File:
+1. Create Implementation Status File:
 ```
+cp data/template_implementation_status.csv data/my_robot_implementation_status.csv
+
+```
+2. Edit Defense Implementation Status:
+3. Update the CSV with your robot's defense implementations (0.0 = not implemented, 1.0 = fully implemented)
+
+Run Assessment:
+```
+python scripts/score_RISK_MAP.py --impl data/my_robot_implementation_status.csv
+
+```
+Custom Attack-Defense Matrix
+
+To use your own attack-defense relationships:
+```
+python scripts/score_RISK_MAP.py --matrix path/to/custom_matrix.csv --weights path/to/custom_weights.csv
+
+```
+Advanced Analysis
+
+For detailed layer-by-layer analysis:
+```
+from scripts.score_RISK_MAP import compute_scores
+import pandas as pd
+
+# Load data
+A = pd.read_csv("data/attacks_vs_defenses_normalised.csv", index_col='Attack Vector')
+W = pd.read_csv("data/attack_weights.csv", index_col='Attack Vector')['Weight']
+I = pd.read_csv("data/robot_implementation_status.csv", index_col='Defence')['Implementation']
+
+# Compute scores
+overall, layer_scores, effectiveness_matrix = compute_scores(A, W, I)
+
+print(f"Overall Security Score: {overall:.2f}")
+for layer, score in layer_scores.items():
+    print(f"{layer}: {score:.3f}")
+
+```
+# Reproducing Paper Results
+Main Experimental Results (Section 5)
+```
+# Generate all figures from the paper
+python scripts/reproduce_paper_results.py
+
+# Specific experiments:
+python scripts/reproduce_paper_results.py --experiment case_studies
+python scripts/reproduce_paper_results.py --experiment sensitivity_analysis  
+python scripts/reproduce_paper_results.py --experiment validation_study
+
+```
+Statistical Analysis (Section 5.3)
+```
+python scripts/statistical_validation.py
+
+```
+Performance Benchmarks (Section 5.4)
+```
+
+python scripts/performance_benchmark.py
+
+```
+Expected runtime: ~5 minutes on standard desktop hardware.
+
+📊 Dataset Description
+Core Datasets
+| File                                 | Description                         | Dimensions               | Purpose                |
+| ------------------------------------ | ----------------------------------- | ------------------------ | ---------------------- |
+| `attacks_vs_defenses_normalised.csv` | Attack-defense effectiveness matrix | 39 attacks × 35 defenses | Core assessment logic  |
+| `attack_weights.csv`                 | Attack severity weights             | 39 attacks × 1 weight    | Risk prioritization    |
+| `*_implementation_status.csv`        | Robot defense implementations       | 35 defenses × 1 status   | Individual assessments |
+```
+
+
