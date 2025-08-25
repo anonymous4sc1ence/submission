@@ -73,3 +73,81 @@ RISK_MAP/
 ├── environment.yml # Conda environment specification
 └── README.md # This file
 ```
+
+## 🚀 Installation
+
+### Prerequisites
+
+- Python 3.8 or higher
+- Git
+
+### Option 1: Using pip (Recommended)
+
+```bash
+# Clone the repository
+git clone https://github.com/anonymous4sc1ence/submission.git
+cd submission
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+```
+Option 2: Using conda
+```
+# Clone the repository
+git clone https://github.com/anonymous4sc1ence/submission.git
+cd submission
+
+# Create conda environment
+conda env create -f environment.yml
+conda activate risk-map
+
+```
+Verify Installation
+```
+python scripts/score_RISK_MAP.py --help
+
+```
+⚡ Quick Start
+Basic Assessment
+
+Run RISK-MAP assessment on all robots in the dataset:
+```
+python scripts/score_RISK_MAP.py
+
+```
+This will:
+
+Process all *_implementation_status.csv files in data/
+
+Generate individual radar charts in figures/[robot_name]/
+
+Create per-layer scores in data/per_layer_scores.csv
+
+Display summary results in the terminal
+
+Generate Comparative Analysis
+
+Create combined visualization comparing multiple robots:
+```
+python scripts/combined_radar.py
+
+```
+Expected Output
+```
+[✓]    Robot1: RISK_MAP  39.9%  → figures/Robot1
+[✓]    Robot2: RISK_MAP  48.9%  → figures/Robot2  
+[✓]    Robot3: RISK_MAP  79.5%  → figures/Robot3
+[✓] Wrote per-layer scores → data/per_layer_scores.csv
+[✓] Combined radar → figures/combined_radar.pdf
+
+```
+📖 Detailed Usage
+Assessing a New Robot
+
+Create Implementation Status File:
+```
