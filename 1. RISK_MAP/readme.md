@@ -159,8 +159,8 @@ These correspond to the quantitative RISK-MAP method and results reported in the
 ## Quick Start (Notebook-first, recommended)
 
 1) **Create an environment** (pick one):
-```
 - **venv**
+```
   ```bash
   python -m venv .venv
   # Windows:
