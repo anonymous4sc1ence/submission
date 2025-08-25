@@ -45,37 +45,61 @@ The RISK-MAP framework provides:
 - 🔧 **Automated Assessment**: Scriptable evaluation pipeline for CI/CD integration
 
 ## 📁 Repository Structure
+## Repository Structure (with descriptions)
 ```
-RISK_MAP/
-├── data/ # Core datasets and matrices
-│ ├── attacks_vs_defenses_normalised.csv # Main attack-defense matrix
-│ ├── attack_weights.csv # Attack severity weights
-│ ├── per_layer_scores.csv # Generated layer scores
-│ └── *_implementation_status.csv # Robot-specific defense implementations
-├── scripts/ # Analysis and visualization scripts
-│ ├── score_RISK_MAP.py # Main scoring algorithm
-│ ├── combined_radar.py # Multi-robot comparison charts
-│ └── [additional analysis scripts]
-├── figures/ # Generated visualizations
-│ ├── [robot_name]/
-│ │ ├── radar.pdf # Individual radar charts
-│ │ └── heatmap_top10.png # Risk heatmaps
-│ └── combined_radar.pdf # Comparative analysis
-├── docs/ # Documentation
-│ ├── methodology.md # Detailed methodology
-│ ├── attack_taxonomy.md # Complete attack vector taxonomy
-│ └── defense_catalog.md # Defense mechanism catalog
-├── examples/ # Usage examples
-│ ├── quick_start_example.py # Basic usage demonstration
-│ └── custom_robot_assessment.py # Adding new robots
-├── tests/ # Unit tests and validation
-│ ├── test_scoring_algorithm.py # Algorithm validation
-│ └── test_data_integrity.py # Data consistency checks
-├── requirements.txt # Python dependencies
-├── environment.yml # Conda environment specification
-└── README.md # This file
+| File / Folder                        | Description                                   |
+|--------------------------------------|-----------------------------------------------|
+| **Information/**                     | Robot descriptions and defense mappings       |
+| ├── Description of Digit.xlsx        | High-level specification of Digit humanoid    |
+| ├── Description of G1.xlsx           | High-level specification of G1 EDU humanoid   |
+| ├── Description of Pepper.xlsx       | High-level specification of Pepper humanoid   |
+| ├── Digit defences.xlsx              | Defense mechanisms for Digit                  |
+| ├── G1 EDU defences.xlsx             | Defense mechanisms for G1 EDU                 |
+| └── Pepper defences.xlsx             | Defense mechanisms for Pepper                 |
+|                                      |                                               |
+| **data/**                            | Core inputs for RISK-MAP scoring              |
+| ├── sensitivity/                     | Sensitivity analysis outputs                  |
+| │   ├── sensitivity_Digit.csv        | Sensitivity results for Digit                 |
+| │   ├── sensitivity_G1_EDU.csv       | Sensitivity results for G1 EDU                |
+| │   ├── sensitivity_Pepper.csv       | Sensitivity results for Pepper                |
+| │   └── table_sensitivity.csv        | Consolidated sensitivity table                |
+| ├── Digit_applicable_attacks.csv     | Attacks relevant to Digit                     |
+| ├── Digit_implementation_status.csv  | Defense implementation status for Digit       |
+| ├── G1_EDU_applicable_attacks.csv    | Attacks relevant to G1 EDU                    |
+| ├── G1_EDU_implementation_status.csv | Defense implementation status for G1 EDU      |
+| ├── Pepper_applicable_attacks.csv    | Attacks relevant to Pepper                    |
+| ├── Pepper_implementation_status.csv | Defense implementation status for Pepper      |
+| ├── RISK_MAP_Per-Layer_Scores.csv    | Computed scores per OSI-like layer            |
+| ├── attack_code_map.csv              | Mapping of attack IDs to categories           |
+| ├── attack_weights.csv               | Weighting/severity factors per attack         |
+| └── attacks_vs_defenses_normalised.csv | Normalised attack–defense coverage matrix    |
+|                                      |                                               |
+| **figures/**                         | Generated plots and visualisations            |
+| ├── Digit/                           | Figures for Digit humanoid                    |
+| │   ├── heatmap.png                  | Top-10 residual risks (Digit)                 |
+| │   ├── radar.pdf                    | 7-layer radar plot (Digit, PDF)               |
+| │   └── radar.png                    | 7-layer radar plot (Digit, PNG)               |
+| ├── G1_EDU/                          | Figures for G1 EDU humanoid                   |
+| │   ├── heatmap.png                  | Top-10 residual risks (G1 EDU)                |
+| │   ├── radar.pdf                    | 7-layer radar plot (G1 EDU, PDF)              |
+| │   └── radar.png                    | 7-layer radar plot (G1 EDU, PNG)              |
+| ├── Pepper/                          | Figures for Pepper humanoid + combined        |
+| │   ├── RISK_MAP_combined_radar.pdf  | Multi-robot radar (PDF)                       |
+| │   ├── RISK_MAP_combined_radar.png  | Multi-robot radar (PNG)                       |
+| │   ├── combined_heatmap_safe_r.pdf  | Multi-robot heatmap (PDF)                     |
+| │   └── combined_heatmap_safe_r.png  | Multi-robot heatmap (PNG)                     |
+|                                      |                                               |
+| **notebooks/**                       | Jupyter notebooks                             |
+| └── RISK_MAP_Assessment.ipynb        | Main notebook for reproduction                |
+|                                      |                                               |
+| **scripts/**                         | Python scripts for analysis                   |
+| ├── combined_heatmap.py              | Generate combined heatmaps across robots      |
+| ├── heatmap.py                       | Generate per-robot heatmaps                   |
+| ├── monte_carlo_RISK_MAP.py          | Monte Carlo sensitivity analysis              |
+| ├── score_RISK_MAP.py                | Compute scores + per-layer radar plots        |
+|                                      |                                               |
+| readme.md                            | Repository guide (this file)                  |
 ```
-
 ## Installation
 
 ### Prerequisites
