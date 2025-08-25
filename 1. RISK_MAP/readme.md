@@ -209,44 +209,37 @@ The notebook will:
     - Write figures into figures/ (per-robot subfolders) and any combined plots (e.g., figures/RISK_MAP_combined_radar.pdf, figures/combined_heatmap_safe_r.png).
 
 Note (Windows paths): If you run from OneDrive or paths containing spaces, the notebook/plots still work as long as you keep relative paths (as they are in the repo).
-```
-```
 Expected runtime: ~5 minutes on standard desktop hardware.
 
-📊 Dataset Description
-Core Datasets
+## 📊 Dataset Description
+### Core Datasets
 | File                                 | Description                         | Dimensions               | Purpose                |
 | ------------------------------------ | ----------------------------------- | ------------------------ | ---------------------- |
 | `attacks_vs_defenses_normalised.csv` | Attack-defense effectiveness matrix | 39 attacks × 35 defenses | Core assessment logic  |
 | `attack_weights.csv`                 | Attack severity weights             | 39 attacks × 1 weight    | Risk prioritization    |
 | `*_implementation_status.csv`        | Robot defense implementations       | 35 defenses × 1 status   | Individual assessments |
 
-# Data Sources
+## Data Sources
 
-Attack Vectors: Derived from systematic literature review of 89 robotics security papers (2015-2025)
+ - Attack Vectors: Derived from systematic literature review of 89 robotics security papers (2015-2025)
+ - Defense Mechanisms: Catalogued from commercial robotics frameworks and security standards
+ - Effectiveness Ratings: Expert assessment validated through empirical testing
+ - Severity Weights: Based on CVSS v3.1 and robotics-specific impact analysis
 
-Defense Mechanisms: Catalogued from commercial robotics frameworks and security standards
+## Data Quality Assurance
 
-Effectiveness Ratings: Expert assessment validated through empirical testing
+  - Inter-rater reliability: κ = 0.82 (substantial agreement)
+  - Coverage validation: 100% mapping to robotics security taxonomy
+  - Consistency checks: Automated validation in tests/test_data_integrity.py
 
-Severity Weights: Based on CVSS v3.1 and robotics-specific impact analysis
+## 📈 Performance and Scalability
 
-Data Quality Assurance
+- Assessment Speed: ~0.1 seconds per robot on standard hardware
+- Memory Usage: <100MB for datasets with 1000+ robots
+- Scalability: Linear complexity O(n) for n robots
+- Parallel Processing: Built-in support for batch assessments
 
-✅ Inter-rater reliability: κ = 0.82 (substantial agreement)
-
-✅ Coverage validation: 100% mapping to robotics security taxonomy
-
-✅ Consistency checks: Automated validation in tests/test_data_integrity.py
-
-📈 Performance and Scalability
-
-Assessment Speed: ~0.1 seconds per robot on standard hardware
-Memory Usage: <100MB for datasets with 1000+ robots
-Scalability: Linear complexity O(n) for n robots
-Parallel Processing: Built-in support for batch assessments
-
-📜 License
+## 📜 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 ```
 
