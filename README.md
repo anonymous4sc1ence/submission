@@ -51,14 +51,25 @@ This folder supports transparency of the **systematization process** (PRISMA-sty
 1. Navigate to the RISK-MAP folder:
    ```bash
    cd "submission/1. RISK_MAP"
-
-```
+   ```
 2. Follow the instructions in its README to:
 - Run the notebook for full reproduction, or
 - Use scripts/ for command-line reproduction.
 
 3. Generated figures and CSVs will appear under figures/ and data/sensitivity/.
 
+### Artifact Scope
 
+RISK-MAP provides the quantitative evaluation and visualisations in the paper.
+
+Related Works provides the literature synthesis basis of the SoK.
+
+Together, these two components ensure both computational reproducibility and literature traceability.
+
+### License & Anonymity
+
+Code and data are released solely for artifact evaluation.
+
+Please do not attempt to deanonymize authors during review.
 ```
 
