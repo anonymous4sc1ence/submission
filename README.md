@@ -4,7 +4,8 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 
-> **Artifact Submission for USENIX Security 2025**  
+
+> **Artifact Submission for USENIX Security 2026**  
 > Paper Title: [Your Paper Title]  
 > Authors: [Anonymous for Review]
 
