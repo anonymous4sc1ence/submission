@@ -6,7 +6,7 @@
 
 It contains two main components:  
 1. **RISK-MAP** — the core method, data, and code to reproduce all figures, tables, and scores in the paper.  
-2. **Related Works** — survey notes, bibliographic material, and literature mappings supporting the SoK.
+2. **Related Works** — PRISMA diagram, survey notes, bibliographic material, and literature mappings supporting the SoK.
 
 ---
 
