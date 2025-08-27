@@ -47,58 +47,62 @@ The RISK-MAP framework provides:
 ## 📁 Repository Structure
 ## Repository Structure (with descriptions)
 ```
-| File / Folder                        | Description                                   |
-|--------------------------------------|-----------------------------------------------|
-| **Information/**                     | Robot descriptions and defense mappings       |
-| ├── Description of Digit.xlsx        | High-level specification of Digit humanoid    |
-| ├── Description of G1.xlsx           | High-level specification of G1 EDU humanoid   |
-| ├── Description of Pepper.xlsx       | High-level specification of Pepper humanoid   |
-| ├── Digit defences.xlsx              | Defense mechanisms for Digit                  |
-| ├── G1 EDU defences.xlsx             | Defense mechanisms for G1 EDU                 |
-| └── Pepper defences.xlsx             | Defense mechanisms for Pepper                 |
-|                                      |                                               |
-| **data/**                            | Core inputs for RISK-MAP scoring              |
-| ├── sensitivity/                     | Sensitivity analysis outputs                  |
-| │   ├── sensitivity_Digit.csv        | Sensitivity results for Digit                 |
-| │   ├── sensitivity_G1_EDU.csv       | Sensitivity results for G1 EDU                |
-| │   ├── sensitivity_Pepper.csv       | Sensitivity results for Pepper                |
-| │   └── table_sensitivity.csv        | Consolidated sensitivity table                |
-| ├── Digit_applicable_attacks.csv     | Attacks relevant to Digit                     |
-| ├── Digit_implementation_status.csv  | Defense implementation status for Digit       |
-| ├── G1_EDU_applicable_attacks.csv    | Attacks relevant to G1 EDU                    |
-| ├── G1_EDU_implementation_status.csv | Defense implementation status for G1 EDU      |
-| ├── Pepper_applicable_attacks.csv    | Attacks relevant to Pepper                    |
-| ├── Pepper_implementation_status.csv | Defense implementation status for Pepper      |
-| ├── RISK_MAP_Per-Layer_Scores.csv    | Computed scores per OSI-like layer            |
-| ├── attack_code_map.csv              | Mapping of attack IDs to categories           |
-| ├── attack_weights.csv               | Weighting/severity factors per attack         |
-| └── attacks_vs_defenses_normalised.csv | Normalised attack–defense coverage matrix    |
-|                                      |                                               |
-| **figures/**                         | Generated plots and visualisations            |
-| ├── Digit/                           | Figures for Digit humanoid                    |
-| │   ├── heatmap.png                  | Top-10 residual risks (Digit)                 |
-| │   ├── radar.pdf                    | 7-layer radar plot (Digit, PDF)               |
-| │   └── radar.png                    | 7-layer radar plot (Digit, PNG)               |
-| ├── G1_EDU/                          | Figures for G1 EDU humanoid                   |
-| │   ├── heatmap.png                  | Top-10 residual risks (G1 EDU)                |
-| │   ├── radar.pdf                    | 7-layer radar plot (G1 EDU, PDF)              |
-| │   └── radar.png                    | 7-layer radar plot (G1 EDU, PNG)              |
-| ├── Pepper/                          | Figures for Pepper humanoid + combined        |
-| │   ├── RISK_MAP_combined_radar.pdf  | Multi-robot radar (PDF)                       |
-| │   ├── RISK_MAP_combined_radar.png  | Multi-robot radar (PNG)                       |
-| │   ├── combined_heatmap_safe_r.pdf  | Multi-robot heatmap (PDF)                     |
-| │   └── combined_heatmap_safe_r.png  | Multi-robot heatmap (PNG)                     |
-|                                      |                                               |
-| **notebooks/**                       | Jupyter notebooks                             |
-| └── RISK_MAP_Assessment.ipynb        | Main notebook for reproduction                |
-|                                      |                                               |
-| **scripts/**                         | Python scripts for analysis                   |
-| ├── combined_heatmap.py              | Generate combined heatmaps across robots      |
-| ├── heatmap.py                       | Generate per-robot heatmaps                   |
-| ├── monte_carlo_RISK_MAP.py          | Monte Carlo sensitivity analysis              |
-| ├── score_RISK_MAP.py                | Compute scores + per-layer radar plots        |
-|                                      |                                               |
-| readme.md                            | Repository guide (this file)                  |
+| File / Folder                               | Description                                            |
+| ------------------------------------------- | ------------------------------------------------------ |
+| **Information/**                            | Robot documentation and defense mappings               |
+| ├── Description of Digit.xlsx               | High-level specification of Digit humanoid             |
+| ├── Description of G1.xlsx                  | High-level specification of G1 EDU humanoid            |
+| ├── Description of Pepper.xlsx              | High-level specification of Pepper humanoid            |
+| ├── Digit defences.xlsx                     | Defense mechanisms catalog for Digit                   |
+| ├── G1 EDU defences.xlsx                    | Defense mechanisms catalog for G1 EDU                  |
+| └── Pepper defences.xlsx                    | Defense mechanisms catalog for Pepper                  |
+|                                             |                                                        |
+| **data/**                                   | Core inputs for RISK-MAP scoring and cascades          |
+| ├── sensitivity/                            | Sensitivity analysis outputs                           |
+| │   ├── attack\_chains\_auto.csv            | Auto-generated attack chain enumeration                |
+| │   ├── attack\_chains\_final.csv           | Final curated attack chains                            |
+| │   └── table\_sensitivity.csv              | Consolidated sensitivity results                       |
+| ├── Digit\_applicable\_attacks.csv          | Attacks relevant to Digit platform                     |
+| ├── Digit\_implementation\_status.csv       | Defense implementation status for Digit                |
+| ├── G1\_EDU\_applicable\_attacks.csv        | Attacks relevant to G1 EDU                             |
+| ├── G1\_EDU\_implementation\_status.csv     | Defense implementation status for G1 EDU               |
+| ├── Pepper\_applicable\_attacks.csv         | Attacks relevant to Pepper                             |
+| ├── Pepper\_implementation\_status.csv      | Defense implementation status for Pepper               |
+| ├── RISK\_MAP\_Per-Layer\_Scores.csv        | Computed per-layer coverage scores                     |
+| ├── attack\_code\_map.csv                   | Mapping of attack IDs to semantic families             |
+| ├── attack\_weights.csv                     | Weighting / severity factors for each attack           |
+| ├── attacks\_vs\_defenses\_normalised.csv   | Normalised attack–defense coverage matrix              |
+| ├── layer\_dependency.csv                   | Layer dependency edges (S, E, M weights)               |
+| ├── layer\_edges\_sem.csv                   | Alternative layer dependency specification             |
+| └── robot\_layer\_coverage.csv              | Layer coverage values (0–5) per robot                  |
+|                                             |                                                        |
+| **figures/**                                | Generated plots and visualisations                     |
+| ├── Digit/                                  | Figures for Digit humanoid                             |
+| │   └── radar.png / radar.pdf               | RISK-MAP radar for Digit                               |
+| ├── G1\_EDU/                                | Figures for G1 EDU humanoid                            |
+| │   └── radar.png / radar.pdf               | RISK-MAP radar for G1 EDU                              |
+| ├── Pepper/                                 | Figures for Pepper humanoid                            |
+| │   ├── radar.png / radar.pdf               | RISK-MAP radar for Pepper                              |
+| │   └── RISK\_MAP\_combined\_radar.png      | Combined radar across all robots                       |
+|                                             |                                                        |
+| **outputs\_top3/**                          | Cross-layer cascade outputs (Top-3 chains)             |
+| ├── attack\_chains\_auto.csv                | Auto-enumerated chains used in Top-3                   |
+| ├── cascade\_index.csv                      | Cascade index (2-hop)                                  |
+| ├── possible\_chains.csv                    | All possible two-hop attack chains                     |
+| ├── top3\_by\_robot.csv                     | Top-3 cascades table per robot                         |
+| ├── fig\_top3\_2hop\_square.png / .pdf      | Top-3 cascade figure (square layout)                   |
+|                                             |                                                        |
+| **notebooks/**                              | Jupyter notebooks for reproducibility                  |
+| └── RISK\_MAP\_Scoring\_and\_Cascades.ipynb | Runs scoring + cascade analysis end-to-end             |
+|                                             |                                                        |
+| **scripts/**                                | Core Python scripts                                    |
+| ├── score\_RISK\_MAP.py                     | Compute RISK-MAP scores and radars                     |
+| ├── cross\_layer\_pipeline\_top3.py         | Cascade pipeline: 2-hop Top-3 per robot                |
+| └── monte\_carlo\_RISK\_MAP.py              | Sensitivity / Monte-Carlo risk simulations             |
+|                                             |                                                        |
+| **readme.md**                               | Main repository documentation                          |
+| **2. Related\_works/**                      | Related works and bibliography notes (optional folder) |
+
 ```
 ## Installation
 
