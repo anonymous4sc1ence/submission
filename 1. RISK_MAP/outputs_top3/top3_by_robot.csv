@@ -1,0 +1,10 @@
+robot,path,CRR,prop_factor,min_coverage,attack_id,code,label_codes
+Digit,DP>DM>AP,0.112963,0.4514,0.3,Memory-safety overflow DP-A2,"['DP-A2', 'DP-A3', 'DP-A4', 'DP-A1']",DP-A2 +3
+Digit,S>DP>DM,0.098047,0.4144,0.3,Camera/Depth blinding SP-A2,"['SP-A2', 'SP-A1', 'SP-A3', 'SP-A4', 'SP-A5']",SP-A2 +4
+Digit,P>S>DP,0.06421,0.2688,0.3,Firmware reflashing P-A1,"['P-A1', 'P-A2', 'P-A4', 'P-A3', 'P-A5']",P-A1 +4
+G1_EDU,S>DP>DM,0.041026,0.4144,0.45,Camera/Depth blinding SP-A2,"['SP-A2', 'SP-A1', 'SP-A3', 'SP-A5', 'SP-A4']",SP-A2 +4
+G1_EDU,DP>DM>AP,0.039103,0.4514,0.45,Memory-safety overflow DP-A2,"['DP-A2', 'DP-A3', 'DP-A4', 'DP-A1']",DP-A2 +3
+G1_EDU,P>S>DP,0.024948,0.2688,0.45,Firmware reflashing P-A1,"['P-A1', 'P-A2', 'P-A4', 'P-A3', 'P-A5']",P-A1 +4
+Pepper,DP>DM>AP,0.079221,0.4514,0.35,Memory-safety overflow DP-A2,"['DP-A2', 'DP-A4', 'DP-A3', 'DP-A1']",DP-A2 +3
+Pepper,S>DP>DM,0.077576,0.4144,0.35,Camera/Depth blinding SP-A2,"['SP-A2', 'SP-A1', 'SP-A3', 'SP-A4', 'SP-A5']",SP-A2 +4
+Pepper,P>S>DP,0.043243,0.2688,0.35,Firmware reflashing P-A1,"['P-A1', 'P-A2', 'P-A4', 'P-A3', 'P-A5']",P-A1 +4

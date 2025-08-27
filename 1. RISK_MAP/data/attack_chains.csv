@@ -1,0 +1,6 @@
+chain_id,attack_id,weight,path
+C1,P-A1,0.9,P>DP>DM
+C2,SP-A1,0.8,S>DP>DM>AP
+C3,SI-A1,0.7,SI>AP>MW
+C4,MW-A3,0.8,MW>DP>DM
+C5,DP-A4,0.9,DP>DM>AP>SI

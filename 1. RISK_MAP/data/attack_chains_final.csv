@@ -1,0 +1,7 @@
+chain_id,attack_id,weight,path
+CH_46915156,Memory-safety overflow DP-A2,1.0,DP>DM
+CH_50417794,Camera/Depth blinding SP-A2,0.8,S>DP
+CH_46915156,Race / TOCTOU on buffers DP-A3,0.6,DP>DM
+CH_46915156,Estimator-bias tampering DP-A4,0.6,DP>DM
+CH_65132645,Firmware reflashing P-A1,0.75,P>S
+CH_50417794,Active optical LiDAR spoof SP-A1,0.6,S>DP

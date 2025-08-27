@@ -1,0 +1,40 @@
+start_layer,attack_id,weight
+P,Firmware reflashing P-A1,0.75
+P,Sensor-bias (magnet/IR) P-A2,0.6
+P,Power-rail surges P-A3,0.4
+P,Field-level tampering P-A4,0.45
+P,Acoustic / EM side-channel P-A5,0.2
+S,Active optical LiDAR spoof SP-A1,0.6
+S,Camera/Depth blinding SP-A2,0.8
+S,Ultrasound / EMI IMU drift SP-A3,0.6
+S,Physical adversarial patches SP-A4,0.45
+S,Sensor-driven privacy leak SP-A5,0.45
+DP,Timing-channel jitter DP-A1,0.2
+DP,Memory-safety overflow DP-A2,1
+DP,Race / TOCTOU on buffers DP-A3,0.6
+DP,Estimator-bias tampering DP-A4,0.6
+MW,Topic spoof / GUID hijack MW-A1,0.8
+MW,Replay / stale frame MW-A2,0.6
+MW,Plain-text sniff / exfil MW-A3,0.6
+MW,Discovery abuse / DoS MW-A4,0.6
+DM,Adv. examples (vision/RL) DM-A1,0.6
+DM,Sequential perturbations DM-A2,0.6
+DM,Slow fuse / concept drift DM-A3,0.6
+DM,Reward hacking / spec gaming DM-A4,0.4
+DM,Model poisoning / FL backdoor DM-A5,0.5
+DM,Physical backdoor trigger DM-A6,0.5
+DM,FSM logic bombs DM-A7,0.75
+DM,Param-gain tampering DM-A8,0.6
+DM,Planner cost manipulation DM-A9,0.6
+DM,Malicious OTA update DM-A10,0.75
+DM,Trojaned pretrained model DM-A11,0.6
+AP,Script / FSM corruption AP-A1,0.6
+AP,Unauth. APIs AP-A2,0.8
+AP,Unsigned OTA / CI chain AP-A3,0.75
+AP,Twin overload / sim gap AP-A4,0.3
+AP,Runtime param tamper AP-A5,0.8
+SI,Ultrasound/laser cmd SI-A1,0.45
+SI,Hidden / synthetic audio SI-A2,0.45
+SI,Visual spoof / adv. patch SI-A3,0.6
+SI,Privacy leak takeover SI-A4,0.45
+SI,Social eng. trust abuse SI-A5,0.6

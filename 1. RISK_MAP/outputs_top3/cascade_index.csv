@@ -1,0 +1,91 @@
+robot,attack_id,path,weight,prop_factor,uncovered_prod,min_coverage,CRR,CCI
+Digit,Memory-safety overflow DP-A2,DP>DM>AP,1.0,0.4514,0.25025,0.3,0.112963,0.887037
+Digit,Camera/Depth blinding SP-A2,S>DP>DM,0.8,0.4144,0.29575,0.3,0.098047,0.901953
+Digit,Active optical LiDAR spoof SP-A1,S>DP>DM,0.6,0.4144,0.29575,0.3,0.073535,0.926465
+Digit,Ultrasound / EMI IMU drift SP-A3,S>DP>DM,0.6,0.4144,0.29575,0.3,0.073535,0.926465
+Digit,Race / TOCTOU on buffers DP-A3,DP>DM>AP,0.6,0.4514,0.25025,0.3,0.067778,0.932222
+Digit,Estimator-bias tampering DP-A4,DP>DM>AP,0.6,0.4514,0.25025,0.3,0.067778,0.932222
+Digit,Firmware reflashing P-A1,P>S>DP,0.75,0.2688,0.3185,0.3,0.06421,0.93579
+Digit,FSM logic bombs DM-A7,DM>AP>SI,0.75,0.3721,0.2145,0.35,0.059862,0.940138
+Digit,Malicious OTA update DM-A10,DM>AP>SI,0.75,0.3721,0.2145,0.35,0.059862,0.940138
+Digit,Physical adversarial patches SP-A4,S>DP>DM,0.45,0.4144,0.29575,0.3,0.055151,0.944849
+Digit,Sensor-driven privacy leak SP-A5,S>DP>DM,0.45,0.4144,0.29575,0.3,0.055151,0.944849
+Digit,Sensor-bias (magnet/IR) P-A2,P>S>DP,0.6,0.2688,0.3185,0.3,0.051368,0.948632
+Digit,Adv. examples (vision/RL) DM-A1,DM>AP>SI,0.6,0.3721,0.2145,0.35,0.047889,0.952111
+Digit,Sequential perturbations DM-A2,DM>AP>SI,0.6,0.3721,0.2145,0.35,0.047889,0.952111
+Digit,Slow fuse / concept drift DM-A3,DM>AP>SI,0.6,0.3721,0.2145,0.35,0.047889,0.952111
+Digit,Param-gain tampering DM-A8,DM>AP>SI,0.6,0.3721,0.2145,0.35,0.047889,0.952111
+Digit,Planner cost manipulation DM-A9,DM>AP>SI,0.6,0.3721,0.2145,0.35,0.047889,0.952111
+Digit,Trojaned pretrained model DM-A11,DM>AP>SI,0.6,0.3721,0.2145,0.35,0.047889,0.952111
+Digit,Firmware reflashing P-A1,P>DP>DM,0.75,0.1998,0.3185,0.3,0.047727,0.952273
+Digit,Model poisoning / FL backdoor DM-A5,DM>AP>SI,0.5,0.3721,0.2145,0.35,0.039908,0.960092
+Digit,Physical backdoor trigger DM-A6,DM>AP>SI,0.5,0.3721,0.2145,0.35,0.039908,0.960092
+Digit,Field-level tampering P-A4,P>S>DP,0.45,0.2688,0.3185,0.3,0.038526,0.961474
+Digit,Sensor-bias (magnet/IR) P-A2,P>DP>DM,0.6,0.1998,0.3185,0.3,0.038182,0.961818
+Digit,Power-rail surges P-A3,P>S>DP,0.4,0.2688,0.3185,0.3,0.034245,0.965755
+Digit,Reward hacking / spec gaming DM-A4,DM>AP>SI,0.4,0.3721,0.2145,0.35,0.031926,0.968074
+Digit,Field-level tampering P-A4,P>DP>DM,0.45,0.1998,0.3185,0.3,0.028636,0.971364
+Digit,Power-rail surges P-A3,P>DP>DM,0.4,0.1998,0.3185,0.3,0.025455,0.974545
+Digit,Timing-channel jitter DP-A1,DP>DM>AP,0.2,0.4514,0.25025,0.3,0.022593,0.977407
+Digit,Acoustic / EM side-channel P-A5,P>S>DP,0.2,0.2688,0.3185,0.3,0.017123,0.982877
+Digit,Acoustic / EM side-channel P-A5,P>DP>DM,0.2,0.1998,0.3185,0.3,0.012727,0.987273
+G1_EDU,Camera/Depth blinding SP-A2,S>DP>DM,0.8,0.4144,0.12375,0.45,0.041026,0.958974
+G1_EDU,Memory-safety overflow DP-A2,DP>DM>AP,1.0,0.4514,0.086625,0.45,0.039103,0.960897
+G1_EDU,Active optical LiDAR spoof SP-A1,S>DP>DM,0.6,0.4144,0.12375,0.45,0.030769,0.969231
+G1_EDU,Ultrasound / EMI IMU drift SP-A3,S>DP>DM,0.6,0.4144,0.12375,0.45,0.030769,0.969231
+G1_EDU,Firmware reflashing P-A1,P>S>DP,0.75,0.2688,0.12375,0.45,0.024948,0.975052
+G1_EDU,Race / TOCTOU on buffers DP-A3,DP>DM>AP,0.6,0.4514,0.086625,0.45,0.023462,0.976538
+G1_EDU,Estimator-bias tampering DP-A4,DP>DM>AP,0.6,0.4514,0.086625,0.45,0.023462,0.976538
+G1_EDU,Physical adversarial patches SP-A4,S>DP>DM,0.45,0.4144,0.12375,0.45,0.023077,0.976923
+G1_EDU,Sensor-driven privacy leak SP-A5,S>DP>DM,0.45,0.4144,0.12375,0.45,0.023077,0.976923
+G1_EDU,Sensor-bias (magnet/IR) P-A2,P>S>DP,0.6,0.2688,0.12375,0.45,0.019958,0.980042
+G1_EDU,FSM logic bombs DM-A7,DM>AP>SI,0.75,0.3721,0.063,0.55,0.017582,0.982418
+G1_EDU,Malicious OTA update DM-A10,DM>AP>SI,0.75,0.3721,0.063,0.55,0.017582,0.982418
+G1_EDU,Firmware reflashing P-A1,P>DP>DM,0.75,0.1998,0.111375,0.45,0.01669,0.98331
+G1_EDU,Field-level tampering P-A4,P>S>DP,0.45,0.2688,0.12375,0.45,0.014969,0.985031
+G1_EDU,Adv. examples (vision/RL) DM-A1,DM>AP>SI,0.6,0.3721,0.063,0.55,0.014065,0.985935
+G1_EDU,Sequential perturbations DM-A2,DM>AP>SI,0.6,0.3721,0.063,0.55,0.014065,0.985935
+G1_EDU,Slow fuse / concept drift DM-A3,DM>AP>SI,0.6,0.3721,0.063,0.55,0.014065,0.985935
+G1_EDU,Param-gain tampering DM-A8,DM>AP>SI,0.6,0.3721,0.063,0.55,0.014065,0.985935
+G1_EDU,Planner cost manipulation DM-A9,DM>AP>SI,0.6,0.3721,0.063,0.55,0.014065,0.985935
+G1_EDU,Trojaned pretrained model DM-A11,DM>AP>SI,0.6,0.3721,0.063,0.55,0.014065,0.985935
+G1_EDU,Sensor-bias (magnet/IR) P-A2,P>DP>DM,0.6,0.1998,0.111375,0.45,0.013352,0.986648
+G1_EDU,Power-rail surges P-A3,P>S>DP,0.4,0.2688,0.12375,0.45,0.013306,0.986694
+G1_EDU,Model poisoning / FL backdoor DM-A5,DM>AP>SI,0.5,0.3721,0.063,0.55,0.011721,0.988279
+G1_EDU,Physical backdoor trigger DM-A6,DM>AP>SI,0.5,0.3721,0.063,0.55,0.011721,0.988279
+G1_EDU,Field-level tampering P-A4,P>DP>DM,0.45,0.1998,0.111375,0.45,0.010014,0.989986
+G1_EDU,Reward hacking / spec gaming DM-A4,DM>AP>SI,0.4,0.3721,0.063,0.55,0.009377,0.990623
+G1_EDU,Power-rail surges P-A3,P>DP>DM,0.4,0.1998,0.111375,0.45,0.008901,0.991099
+G1_EDU,Timing-channel jitter DP-A1,DP>DM>AP,0.2,0.4514,0.086625,0.45,0.007821,0.992179
+G1_EDU,Acoustic / EM side-channel P-A5,P>S>DP,0.2,0.2688,0.12375,0.45,0.006653,0.993347
+G1_EDU,Acoustic / EM side-channel P-A5,P>DP>DM,0.2,0.1998,0.111375,0.45,0.004451,0.995549
+Pepper,Memory-safety overflow DP-A2,DP>DM>AP,1.0,0.4514,0.1755,0.35,0.079221,0.920779
+Pepper,Camera/Depth blinding SP-A2,S>DP>DM,0.8,0.4144,0.234,0.35,0.077576,0.922424
+Pepper,Active optical LiDAR spoof SP-A1,S>DP>DM,0.6,0.4144,0.234,0.35,0.058182,0.941818
+Pepper,Ultrasound / EMI IMU drift SP-A3,S>DP>DM,0.6,0.4144,0.234,0.35,0.058182,0.941818
+Pepper,Race / TOCTOU on buffers DP-A3,DP>DM>AP,0.6,0.4514,0.1755,0.35,0.047532,0.952468
+Pepper,Estimator-bias tampering DP-A4,DP>DM>AP,0.6,0.4514,0.1755,0.35,0.047532,0.952468
+Pepper,Physical adversarial patches SP-A4,S>DP>DM,0.45,0.4144,0.234,0.35,0.043636,0.956364
+Pepper,Sensor-driven privacy leak SP-A5,S>DP>DM,0.45,0.4144,0.234,0.35,0.043636,0.956364
+Pepper,Firmware reflashing P-A1,P>S>DP,0.75,0.2688,0.2145,0.35,0.043243,0.956757
+Pepper,FSM logic bombs DM-A7,DM>AP>SI,0.75,0.3721,0.135,0.4,0.037675,0.962325
+Pepper,Malicious OTA update DM-A10,DM>AP>SI,0.75,0.3721,0.135,0.4,0.037675,0.962325
+Pepper,Sensor-bias (magnet/IR) P-A2,P>S>DP,0.6,0.2688,0.2145,0.35,0.034595,0.965405
+Pepper,Firmware reflashing P-A1,P>DP>DM,0.75,0.1998,0.2145,0.35,0.032143,0.967857
+Pepper,Adv. examples (vision/RL) DM-A1,DM>AP>SI,0.6,0.3721,0.135,0.4,0.03014,0.96986
+Pepper,Sequential perturbations DM-A2,DM>AP>SI,0.6,0.3721,0.135,0.4,0.03014,0.96986
+Pepper,Slow fuse / concept drift DM-A3,DM>AP>SI,0.6,0.3721,0.135,0.4,0.03014,0.96986
+Pepper,Param-gain tampering DM-A8,DM>AP>SI,0.6,0.3721,0.135,0.4,0.03014,0.96986
+Pepper,Planner cost manipulation DM-A9,DM>AP>SI,0.6,0.3721,0.135,0.4,0.03014,0.96986
+Pepper,Trojaned pretrained model DM-A11,DM>AP>SI,0.6,0.3721,0.135,0.4,0.03014,0.96986
+Pepper,Field-level tampering P-A4,P>S>DP,0.45,0.2688,0.2145,0.35,0.025946,0.974054
+Pepper,Sensor-bias (magnet/IR) P-A2,P>DP>DM,0.6,0.1998,0.2145,0.35,0.025714,0.974286
+Pepper,Model poisoning / FL backdoor DM-A5,DM>AP>SI,0.5,0.3721,0.135,0.4,0.025117,0.974883
+Pepper,Physical backdoor trigger DM-A6,DM>AP>SI,0.5,0.3721,0.135,0.4,0.025117,0.974883
+Pepper,Power-rail surges P-A3,P>S>DP,0.4,0.2688,0.2145,0.35,0.023063,0.976937
+Pepper,Reward hacking / spec gaming DM-A4,DM>AP>SI,0.4,0.3721,0.135,0.4,0.020093,0.979907
+Pepper,Field-level tampering P-A4,P>DP>DM,0.45,0.1998,0.2145,0.35,0.019286,0.980714
+Pepper,Power-rail surges P-A3,P>DP>DM,0.4,0.1998,0.2145,0.35,0.017143,0.982857
+Pepper,Timing-channel jitter DP-A1,DP>DM>AP,0.2,0.4514,0.1755,0.35,0.015844,0.984156
+Pepper,Acoustic / EM side-channel P-A5,P>S>DP,0.2,0.2688,0.2145,0.35,0.011532,0.988468
+Pepper,Acoustic / EM side-channel P-A5,P>DP>DM,0.2,0.1998,0.2145,0.35,0.008571,0.991429
