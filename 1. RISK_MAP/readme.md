@@ -1,4 +1,4 @@
-# RISK-MAP: A Comprehensive Framework for Robotics Security Assessment
+# RISK-MAP: A Comprehensive Method for Robotics Security Assessment
 
 [![DOI](https://img.shields.io/badge/DOI-10.xxxx%2Fxxxxxx-blue)](https://doi.org/10.xxxx/xxxxxx)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
