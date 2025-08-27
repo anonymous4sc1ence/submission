@@ -27,7 +27,7 @@ The `1. RISK_MAP/` folder contains:
 
 - **Core data**: attack–defense matrices, severity weights, and per-robot implementation CSVs.  
 - **Scripts**: to compute scores, generate radar/heatmaps, and run Monte Carlo sensitivity analyses.  
-- **Notebook**: `RISK_MAP_Assessment.ipynb` — main entrypoint for reproduction.  
+- **Notebook**: `RISK_MAP_Scoring_and_Cascades.ipynb` — main entrypoint for reproduction.  
 - **Figures**: generated plots corresponding to paper results (Figures 4a/4b, Table 3, sensitivity tables).  
 
 📖 See the detailed [RISK-MAP README](./1.%20RISK_MAP/readme.md) for step-by-step instructions to reproduce results.
