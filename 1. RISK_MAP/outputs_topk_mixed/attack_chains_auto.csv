@@ -1,0 +1,65 @@
+chain_id,attack_id,weight,path,hops
+CH_55177956,Adv. examples (vision/RL) DM-A1,0.6,DM>AP>SI,2
+CH_55177956,Sequential perturbations DM-A2,0.6,DM>AP>SI,2
+CH_55177956,Slow fuse / concept drift DM-A3,0.6,DM>AP>SI,2
+CH_55177956,Reward hacking / spec gaming DM-A4,0.4,DM>AP>SI,2
+CH_55177956,Model poisoning / FL backdoor DM-A5,0.5,DM>AP>SI,2
+CH_55177956,Physical backdoor trigger DM-A6,0.5,DM>AP>SI,2
+CH_55177956,FSM logic bombs DM-A7,0.75,DM>AP>SI,2
+CH_55177956,Param-gain tampering DM-A8,0.6,DM>AP>SI,2
+CH_55177956,Planner cost manipulation DM-A9,0.6,DM>AP>SI,2
+CH_55177956,Malicious OTA update DM-A10,0.75,DM>AP>SI,2
+CH_55177956,Trojaned pretrained model DM-A11,0.6,DM>AP>SI,2
+CH_51379131,Timing-channel jitter DP-A1,0.2,DP>DM>AP,2
+CH_51379131,Memory-safety overflow DP-A2,1.0,DP>DM>AP,2
+CH_51379131,Race / TOCTOU on buffers DP-A3,0.6,DP>DM>AP,2
+CH_51379131,Estimator-bias tampering DP-A4,0.6,DP>DM>AP,2
+CH_13943872,Firmware reflashing P-A1,0.75,P>DP>DM,2
+CH_13943872,Sensor-bias (magnet/IR) P-A2,0.6,P>DP>DM,2
+CH_13943872,Power-rail surges P-A3,0.4,P>DP>DM,2
+CH_13943872,Field-level tampering P-A4,0.45,P>DP>DM,2
+CH_13943872,Acoustic / EM side-channel P-A5,0.2,P>DP>DM,2
+CH_29606687,Firmware reflashing P-A1,0.75,P>S>DP,2
+CH_29606687,Sensor-bias (magnet/IR) P-A2,0.6,P>S>DP,2
+CH_29606687,Power-rail surges P-A3,0.4,P>S>DP,2
+CH_29606687,Field-level tampering P-A4,0.45,P>S>DP,2
+CH_29606687,Acoustic / EM side-channel P-A5,0.2,P>S>DP,2
+CH_29027096,Active optical LiDAR spoof SP-A1,0.6,S>DP>DM,2
+CH_29027096,Camera/Depth blinding SP-A2,0.8,S>DP>DM,2
+CH_29027096,Ultrasound / EMI IMU drift SP-A3,0.6,S>DP>DM,2
+CH_29027096,Physical adversarial patches SP-A4,0.45,S>DP>DM,2
+CH_29027096,Sensor-driven privacy leak SP-A5,0.45,S>DP>DM,2
+CH_04891389,Timing-channel jitter DP-A1,0.2,DP>DM>AP>SI,3
+CH_04891389,Memory-safety overflow DP-A2,1.0,DP>DM>AP>SI,3
+CH_04891389,Race / TOCTOU on buffers DP-A3,0.6,DP>DM>AP>SI,3
+CH_04891389,Estimator-bias tampering DP-A4,0.6,DP>DM>AP>SI,3
+CH_35126086,Firmware reflashing P-A1,0.75,P>DP>DM>AP,3
+CH_35126086,Sensor-bias (magnet/IR) P-A2,0.6,P>DP>DM>AP,3
+CH_35126086,Power-rail surges P-A3,0.4,P>DP>DM>AP,3
+CH_35126086,Field-level tampering P-A4,0.45,P>DP>DM>AP,3
+CH_35126086,Acoustic / EM side-channel P-A5,0.2,P>DP>DM>AP,3
+CH_90861818,Firmware reflashing P-A1,0.75,P>S>DP>DM,3
+CH_90861818,Sensor-bias (magnet/IR) P-A2,0.6,P>S>DP>DM,3
+CH_90861818,Power-rail surges P-A3,0.4,P>S>DP>DM,3
+CH_90861818,Field-level tampering P-A4,0.45,P>S>DP>DM,3
+CH_90861818,Acoustic / EM side-channel P-A5,0.2,P>S>DP>DM,3
+CH_88203657,Active optical LiDAR spoof SP-A1,0.6,S>DP>DM>AP,3
+CH_88203657,Camera/Depth blinding SP-A2,0.8,S>DP>DM>AP,3
+CH_88203657,Ultrasound / EMI IMU drift SP-A3,0.6,S>DP>DM>AP,3
+CH_88203657,Physical adversarial patches SP-A4,0.45,S>DP>DM>AP,3
+CH_88203657,Sensor-driven privacy leak SP-A5,0.45,S>DP>DM>AP,3
+CH_40363500,Firmware reflashing P-A1,0.75,P>DP>DM>AP>SI,4
+CH_40363500,Sensor-bias (magnet/IR) P-A2,0.6,P>DP>DM>AP>SI,4
+CH_40363500,Power-rail surges P-A3,0.4,P>DP>DM>AP>SI,4
+CH_40363500,Field-level tampering P-A4,0.45,P>DP>DM>AP>SI,4
+CH_40363500,Acoustic / EM side-channel P-A5,0.2,P>DP>DM>AP>SI,4
+CH_29557081,Firmware reflashing P-A1,0.75,P>S>DP>DM>AP,4
+CH_29557081,Sensor-bias (magnet/IR) P-A2,0.6,P>S>DP>DM>AP,4
+CH_29557081,Power-rail surges P-A3,0.4,P>S>DP>DM>AP,4
+CH_29557081,Field-level tampering P-A4,0.45,P>S>DP>DM>AP,4
+CH_29557081,Acoustic / EM side-channel P-A5,0.2,P>S>DP>DM>AP,4
+CH_34992736,Active optical LiDAR spoof SP-A1,0.6,S>DP>DM>AP>SI,4
+CH_34992736,Camera/Depth blinding SP-A2,0.8,S>DP>DM>AP>SI,4
+CH_34992736,Ultrasound / EMI IMU drift SP-A3,0.6,S>DP>DM>AP>SI,4
+CH_34992736,Physical adversarial patches SP-A4,0.45,S>DP>DM>AP>SI,4
+CH_34992736,Sensor-driven privacy leak SP-A5,0.45,S>DP>DM>AP>SI,4

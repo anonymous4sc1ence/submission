@@ -1,0 +1,10 @@
+robot,path,rank_metric,CRR,prop_factor,prop_gmean,prop_bottleneck,min_coverage,hops,attack_id
+Digit,DP>DM>AP,0.168134,0.112963,0.4514,0.671863,0.61,0.3,2,Memory-safety overflow DP-A2
+Digit,S>DP>DM,0.152309,0.098047,0.4144,0.643739,0.56,0.3,2,Camera/Depth blinding SP-A2
+Digit,P>S>DP,0.123847,0.06421,0.2688,0.518459,0.48,0.3,2,Firmware reflashing P-A1
+G1_EDU,S>DP>DM,0.06373,0.041026,0.4144,0.643739,0.56,0.45,2,Camera/Depth blinding SP-A2
+G1_EDU,DP>DM>AP,0.0582,0.039103,0.4514,0.671863,0.61,0.45,2,Memory-safety overflow DP-A2
+G1_EDU,P>S>DP,0.048119,0.024948,0.2688,0.518459,0.48,0.45,2,Firmware reflashing P-A1
+Pepper,DP>DM>AP,0.117912,0.079221,0.4514,0.671863,0.61,0.35,2,Memory-safety overflow DP-A2
+Pepper,S>DP>DM,0.120508,0.077576,0.4144,0.643739,0.56,0.35,2,Camera/Depth blinding SP-A2
+Pepper,P>S>DP,0.083407,0.043243,0.2688,0.518459,0.48,0.35,2,Firmware reflashing P-A1
